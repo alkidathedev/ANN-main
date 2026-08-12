@@ -1,0 +1,123 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="650" viewBox="0 0 1200 650">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#2f80c1"/>
+    </marker>
+    <style>
+      .node { fill: #5fa8dc; stroke: #2d6f9f; stroke-width: 2; }
+      .bias { fill: #5fa8dc; stroke: #2d6f9f; stroke-width: 2; }
+      .label { font-family: "Times New Roman", serif; font-size: 20px; fill: #111; }
+      .small { font-family: "Times New Roman", serif; font-size: 17px; fill: #111; }
+      .title { font-family: "Times New Roman", serif; font-size: 24px; font-weight: bold; fill: #111; }
+      .blue { stroke: #2f80c1; stroke-width: 3; fill: none; marker-end: url(#arrow); }
+      .wred { stroke: #e23d3d; stroke-width: 2.2; fill: none; }
+      .wgreen { stroke: #23a455; stroke-width: 2.2; fill: none; }
+      .worange { stroke: #f2a51a; stroke-width: 2.2; fill: none; }
+      .wpurple { stroke: #8f5cc2; stroke-width: 2.2; fill: none; }
+      .gray { stroke: #555; stroke-width: 2.2; fill: none; }
+      .redtext { fill: #d51d1d; }
+      .greentext { fill: #16883d; }
+      .orangetext { fill: #d99000; }
+      .purpletext { fill: #7a45b0; }
+    </style>
+  </defs>
+
+  <text x="600" y="42" text-anchor="middle" class="title">Four-Layer Artificial Neural Network</text>
+  <text x="600" y="72" text-anchor="middle" class="small">input layer -> hidden layer 1 -> hidden layer 2 -> output layer</text>
+
+  <!-- Column labels -->
+  <text x="100" y="120" text-anchor="middle" class="small">Input</text>
+  <text x="330" y="120" text-anchor="middle" class="small">Hidden layer 1</text>
+  <text x="570" y="120" text-anchor="middle" class="small">Hidden layer 2</text>
+  <text x="810" y="120" text-anchor="middle" class="small">Output</text>
+
+  <!-- Input arrows and input labels -->
+  <line x1="35" y1="220" x2="82" y2="220" class="blue"/>
+  <line x1="35" y1="350" x2="82" y2="350" class="blue"/>
+  <text x="26" y="216" class="small">i11</text>
+  <text x="26" y="346" class="small">i12</text>
+
+  <!-- Input nodes -->
+  <circle cx="110" cy="220" r="34" class="node"/>
+  <text x="110" y="226" text-anchor="middle" class="label">i11</text>
+  <circle cx="110" cy="350" r="34" class="node"/>
+  <text x="110" y="356" text-anchor="middle" class="label">i12</text>
+  <circle cx="110" cy="500" r="34" class="bias"/>
+  <text x="110" y="506" text-anchor="middle" class="label">1</text>
+
+  <!-- Hidden layer 1 nodes -->
+  <circle cx="330" cy="220" r="34" class="node"/>
+  <text x="330" y="226" text-anchor="middle" class="label">h11</text>
+  <circle cx="330" cy="350" r="34" class="node"/>
+  <text x="330" y="356" text-anchor="middle" class="label">h12</text>
+  <circle cx="330" cy="500" r="34" class="bias"/>
+  <text x="330" y="506" text-anchor="middle" class="label">1</text>
+
+  <!-- Hidden layer 2 nodes -->
+  <circle cx="570" cy="220" r="34" class="node"/>
+  <text x="570" y="226" text-anchor="middle" class="label">g11</text>
+  <circle cx="570" cy="350" r="34" class="node"/>
+  <text x="570" y="356" text-anchor="middle" class="label">g12</text>
+  <circle cx="570" cy="500" r="34" class="bias"/>
+  <text x="570" y="506" text-anchor="middle" class="label">1</text>
+
+  <!-- Output nodes -->
+  <circle cx="810" cy="220" r="34" class="node"/>
+  <text x="810" y="226" text-anchor="middle" class="label">o11</text>
+  <circle cx="810" cy="350" r="34" class="node"/>
+  <text x="810" y="356" text-anchor="middle" class="label">o12</text>
+
+  <!-- Output arrows -->
+  <line x1="844" y1="220" x2="930" y2="220" class="blue"/>
+  <line x1="844" y1="350" x2="930" y2="350" class="blue"/>
+  <text x="943" y="226" class="small">out_o11 = circle</text>
+  <text x="943" y="356" class="small">out_o12 = square</text>
+
+  <!-- Input to hidden layer 1 weights -->
+  <line x1="144" y1="220" x2="296" y2="220" class="gray"/>
+  <text x="218" y="205" class="small">w1</text>
+  <line x1="144" y1="350" x2="296" y2="220" class="wred"/>
+  <text x="222" y="271" class="small redtext">w2</text>
+  <line x1="144" y1="220" x2="296" y2="350" class="worange"/>
+  <text x="222" y="315" class="small orangetext">w3</text>
+  <line x1="144" y1="350" x2="296" y2="350" class="wgreen"/>
+  <text x="218" y="374" class="small greentext">w4</text>
+  <line x1="144" y1="500" x2="296" y2="220" class="wpurple"/>
+  <text x="198" y="413" class="small purpletext">b1</text>
+  <line x1="144" y1="500" x2="296" y2="350" class="wpurple"/>
+  <text x="246" y="462" class="small purpletext">b2</text>
+
+  <!-- Hidden layer 1 to hidden layer 2 weights -->
+  <line x1="364" y1="220" x2="536" y2="220" class="gray"/>
+  <text x="447" y="205" class="small">w5</text>
+  <line x1="364" y1="350" x2="536" y2="220" class="wred"/>
+  <text x="453" y="268" class="small redtext">w6</text>
+  <line x1="364" y1="220" x2="536" y2="350" class="worange"/>
+  <text x="453" y="316" class="small orangetext">w7</text>
+  <line x1="364" y1="350" x2="536" y2="350" class="wgreen"/>
+  <text x="447" y="374" class="small greentext">w8</text>
+  <line x1="364" y1="500" x2="536" y2="220" class="wpurple"/>
+  <text x="430" y="411" class="small purpletext">b3</text>
+  <line x1="364" y1="500" x2="536" y2="350" class="wpurple"/>
+  <text x="486" y="462" class="small purpletext">b4</text>
+
+  <!-- Hidden layer 2 to output weights -->
+  <line x1="604" y1="220" x2="776" y2="220" class="gray"/>
+  <text x="686" y="205" class="small">w9</text>
+  <line x1="604" y1="350" x2="776" y2="220" class="wred"/>
+  <text x="682" y="268" class="small redtext">w10</text>
+  <line x1="604" y1="220" x2="776" y2="350" class="worange"/>
+  <text x="682" y="316" class="small orangetext">w11</text>
+  <line x1="604" y1="350" x2="776" y2="350" class="wgreen"/>
+  <text x="682" y="374" class="small greentext">w12</text>
+  <line x1="604" y1="500" x2="776" y2="220" class="wpurple"/>
+  <text x="670" y="411" class="small purpletext">b5</text>
+  <line x1="604" y1="500" x2="776" y2="350" class="wpurple"/>
+  <text x="726" y="462" class="small purpletext">b6</text>
+
+  <!-- Equation summary -->
+  <text x="85" y="595" class="small">Forward pass:</text>
+  <text x="210" y="595" class="small">h = sigmoid(W1 * i + b1)</text>
+  <text x="455" y="595" class="small">g = sigmoid(W2 * h + b2)</text>
+  <text x="700" y="595" class="small">o = sigmoid(W3 * g + b3)</text>
+</svg>
