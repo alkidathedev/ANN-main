@@ -1,7 +1,5 @@
 # Data Adaptive Growth Three-Layer Perceptron
 
-Companion software for the paper *"Data Adaptive Growth Three-Layer Perceptron"* (Alkida Isaku, Dr. Carlo Ciulla).
-
 It implements a perceptron whose **hidden layer is grown during training** instead of being fixed in
 advance. Training starts with a single hidden neuron; whenever the error stalls above the tolerance, a
 new neuron is added under the **`relearn = 0`** schedule: the new neuron starts at zero, the
@@ -20,7 +18,7 @@ The code is pure Python (standard library only), faithfully ported from the orig
 | `newnet2024v2/net-py/newnet2024.py` | **Static 3-layer** control (fixed hidden size, no growth) |
 | `4-layer/net-py/net4.py`, `testnet4.py` | **4-layer** variant (two hidden layers) |
 | `4-layer/math/` | Backpropagation derivations for the 4-layer network |
-| `results/CROSS_DATASET_VALIDATION_RESULTS.md` | Cross-dataset validation summary reported in the paper |
+
 
 ## Requirements
 
@@ -38,8 +36,7 @@ The code is pure Python (standard library only), faithfully ported from the orig
 
 ## Bring your own data
 
-The software ships without datasets (the paper's image sets are available from the author on request),
-so you run it on your own patterns. The format is simple:
+The software ships without datasets, so you run it on your own patterns. The format is simple:
 
 - **One file per pattern.** Either a text file with one numeric feature per line, or a binary file of
   little-endian doubles (used with the `.A1` / `.A2` extensions).
@@ -172,6 +169,3 @@ The **predicted class is the output with the higher activation** (here `class_a`
   and never grows (no add-a-neuron prompt).
 - **`net4.py` / `testnet4.py`** — four-layer variant with a second hidden layer; also writes `WEIGHT3.txt`.
 
-## Citation
-
-If you use this software, please cite the paper *"Data Adaptive Growth Three-Layer Perceptron"* (Alkida Isaku, Dr. Carlo Ciulla).
